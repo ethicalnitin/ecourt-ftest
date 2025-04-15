@@ -17,7 +17,7 @@ function App() {
     useEffect(() => {
         const fetchInitialData = async () => {
             try {
-                const response = await fetch('http://localhost:3005/auth/initial-data');
+                const response = await fetch('https://lawyerverifyandcases.onrender.com/auth/initial-data');
                 if (!response.ok) {
                     const errorData = await response.json();
                     setError(errorData.error || `Error fetching initial data: ${response.status}`);
@@ -43,7 +43,7 @@ function App() {
         }
 
         try {
-            const response = await fetch(`http://localhost:3005/api/ecourts/${endpoint}`, {
+            const response = await fetch(`https://lawyerverifyandcases.onrender.com/api/ecourts/${endpoint}`, {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',
@@ -96,7 +96,7 @@ function App() {
         if (complexesData) {
             // Fetch captcha after successfully getting complexes
             try {
-                const captchaResponse = await fetch('http://localhost:3005/api/ecourts/fetchCaptcha', {
+                const captchaResponse = await fetch('https://lawyerverifyandcases.onrender.com/api/ecourts/fetchCaptcha', {
                     method: 'POST',
                     headers: {
                         'Content-Type': 'application/json',
