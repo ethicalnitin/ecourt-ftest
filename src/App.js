@@ -40,7 +40,7 @@ function App() {
                 // This calls your backend's /auth/initial-data which should
                 // initialize the session and return the *first* app_token.
                 // The backend handles the cookies in the session.
-                const response = await fetch('https://lawyerverifyandcases.onrender.com/initial-data'); // Check this URL matches your auth route
+                const response = await fetch('https://lawyerverifyandcases.onrender.com/api/ecourts/initial-data'); // Check this URL matches your auth route
 
                 if (!response.ok) {
                     const errorData = await response.json();
